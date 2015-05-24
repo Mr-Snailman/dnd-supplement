@@ -5,6 +5,9 @@
 
 #include <iostream>
 #include <unordered_map>
+#include <vector>
+
+using namespace std;
 
 enum Ability {
   STRENGTH,
@@ -15,17 +18,29 @@ enum Ability {
   CHARISMA
 };
 
-std::ostream& operator<<(std::ostream&, Ability);
+ostream& operator<<(ostream&, Ability);
+
+struct EnumClassHash {
+  template <typename T>
+  size_t operator()(T t) const {
+    return static_cast<size_t>(t);
+  }
+};
+
+extern vector<Ability> iterAbility;
 
 class Abilities {
   private:
-    //unordered_map<Ability, int> abilities;
+    unordered_map<Ability, int, EnumClassHash> abilities;
 
   public:
-    Abilities(int, int, int, int, int, int);
+    Abilities();
+    void setScores(int, int, int, int, int, int);
     int accessAbility(Ability);
     void addToAbility(Ability, int);
 };
+
+ostream& operator<<(ostream&, Abilities);
 
 /*
 class Skill {
