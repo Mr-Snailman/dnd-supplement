@@ -1,0 +1,21 @@
+// build.gradle
+apply plugin: 'cpp'
+
+model {
+  platforms {
+    x64 {
+      architecture "x86-64"
+    }
+  }
+
+  components {
+    hello(NativeLibrarySpec) {}
+    main(NativeExecutableSpec) {
+      sources {
+        cpp {
+          lib library: "hello"
+        }
+      }
+    }
+  }
+}
