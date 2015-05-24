@@ -16,18 +16,20 @@ model {
 
   components {
     character(NativeLibrarySpec) {}
+
     utility(NativeLibrarySpec) {
       sources {
         cpp {
-          lib library: "character"
+          lib library: 'character'
         }
       }
     }
+
     main(NativeExecutableSpec) {
       sources {
         cpp {
-          lib library: "utility" 
-          lib library: "character"
+          lib library: 'utility'
+          lib library: 'character'
         }
       }
     }
