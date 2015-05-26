@@ -12,7 +12,15 @@ class DiceRoller {
 
   public:
     DiceRoller(int);
-    int rollDice();
+    int roll();
 };
 
-Abilities rollAbilities();
+
+Abilities rollAbilities(int(*)(DiceRoller));
+
+int rollLoadedDie(DiceRoller);
+
+int rollNormal(DiceRoller);
+int rollTylerStyle(DiceRoller);
+
+
