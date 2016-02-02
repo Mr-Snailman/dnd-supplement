@@ -2,11 +2,12 @@
 
 Builds through Autotools for C++.
 
-To setup environment and build, run the following:
-1. autoreconf -ivf
-2. ./configure
-3. make clean (Optional)
-4. make
+To setup environment and build, run the following:  
+
+1.  autoreconf -ivf
+2.  ./configure
+3.  make clean (Optional)
+4.  make
 
 Executable will be in the src/ folder currently, named 'dnd_sup'.  
 
