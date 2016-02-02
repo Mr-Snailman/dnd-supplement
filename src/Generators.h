@@ -6,6 +6,8 @@
 
 #include "Stats.h"
 
+#define DICE_ROLLS 4
+
 class DiceRoller {
   private:
     int sides;

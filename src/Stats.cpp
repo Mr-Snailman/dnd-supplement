@@ -44,7 +44,7 @@ void Abilities::addToAbility(Ability key, int val) {
 
 ostream& operator<<(ostream& os, Abilities abs) {
   for (int i = 0; i < iterAbility.size(); i++) {
-    os << iterAbility[i] << ":" << abs.accessAbility(iterAbility[i]) << " ";
+    os << iterAbility[i] << ":" << abs.accessAbility(iterAbility[i]) << endl;
   }
   return os;
 }

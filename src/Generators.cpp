@@ -42,7 +42,7 @@ int rollNormal(DiceRoller die) {
   int sum = 0;
   int temp = 0;
   int lowest = INT_MAX; // Ignore the lowest roll
-  for (int i = 0; i < 4; i++) { // Four dice rolls
+  for (int i = 0; i < DICE_ROLLS; i++) { // Four dice rolls (D&D v3.5 PHB)
     temp = die.roll();
 
     if (lowest > temp) {
@@ -62,7 +62,7 @@ int rollTylerStyle(DiceRoller die) {
   int sum = 0;
   vector<int> rolls;
 
-  for (int i = 0; i < 5; i++) { // Five dice rolls
+  for (int i = 0; i < DICE_ROLLS + 1; i++) { // One more than normal
     rolls.push_back(rollLoadedDie(die));
   }
   sort(rolls.begin(), rolls.end());
